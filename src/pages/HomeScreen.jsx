@@ -3,6 +3,7 @@ import computer from "../assets/img/computer.jpg";
 import Profile from "../components/Profile";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Resume from "../components/Resume";
 
 const HomeScreen = () => {
   // Typing Animation Texts
@@ -14,6 +15,8 @@ const HomeScreen = () => {
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const refResume = useRef(null);
+  const isInViewResume = useInView(refResume, { once: true, margin: "-100px" });
 
   useEffect(() => {
     const timeout = setTimeout(
@@ -48,7 +51,7 @@ const HomeScreen = () => {
       <div className="bg-black  opacity-70 w-full h-full flex justify-center items-center">
         <div className="opacity-100 text-white">
           <motion.div
-            ref={ref}
+       
             initial={{ opacity: 0, y: 50 }}
             animate={ { opacity: 1, y: 0 } }
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -72,6 +75,14 @@ const HomeScreen = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <Profile />
+      </motion.div>
+      <motion.div
+        ref={refResume}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInViewResume ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <Resume />
       </motion.div>
     </div>
   );
