@@ -3,6 +3,9 @@
 *{
   font-family: 'Poppins', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 .custom-ul{
  display: none;
 }

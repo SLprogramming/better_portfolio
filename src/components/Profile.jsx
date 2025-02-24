@@ -3,7 +3,7 @@ import SuPyae from "../assets/img/supyae_1.jpg";
 
 const Profile = () => {
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-white shadow-md rounded-md flex flex-col md:flex-row gap-8">
+    <div id="About" className="max-w-6xl mx-auto p-6 bg-white shadow-md rounded-md flex flex-col md:flex-row gap-8">
       {/* Left Section - Profile & Skills */}
       <div className="w-full md:w-1/2">
       <div className="w-full flex flex-col lg:flex-row gap-4">
@@ -39,6 +39,7 @@ const Profile = () => {
                   style={{ width: skill.level }}
                 ></div>
               </div>
+              <span className="text-sm text-gray-500">{skill.level}</span>
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import computer from '../assets/img/computer.jpg'
 import Profile from '../components/Profile';
+import ScrollAnimation from 'react-animate-on-scroll';
 const HomeScreen = () => {
      // Typing Animation Texts
      const roles = ["Web Designer", "Frontend Developer"];
@@ -27,18 +28,28 @@ const HomeScreen = () => {
          return () => clearTimeout(timeout);
      }, [charIndex, isDeleting, index, roles]);
   return (
-    <div className='bg-cyan-400  absolute w-full h-full ' style={{ backgroundImage: `url(${computer})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div id='Home' className='bg-cyan-400  absolute w-full h-full ' style={{ backgroundImage: `url(${computer})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className='bg-black  opacity-70 w-full h-full flex justify-center items-center'> 
             <div className='opacity-100 text-white'>
-                <h1 className='text-4xl md:text-6xl font-bold text-center'>I am Thae Oo Su Pyae Sone</h1>
                 {/* Typing Animation */}
+                <ScrollAnimation  animateIn=" fadeInUp"
+            duration={1}
+            animateOnce={true}  >
+                <h1 className='text-4xl md:text-6xl font-bold text-center'>I am Thae Oo Su Pyae Sone</h1>
+
                 <div className="text-2xl md:text-4xl mt-3 text-center font-semibold text-white-400  ">
                     <span className="text-white">{text}</span>
                     <span className="animate-blink">|</span>
                 </div>
+            </ScrollAnimation>
             </div>
         </div>
+        <ScrollAnimation  animateIn=" fadeInUp"
+            duration={.5}
+            animateOnce={true}  >
+
         <Profile/>
+        </ScrollAnimation>
     </div>
   )
 }

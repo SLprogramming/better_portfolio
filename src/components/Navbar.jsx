@@ -16,7 +16,8 @@ const Navbar = () => {
           <ul className=" space-x-2 text-md custom-ul">
             {navItems.map((item) => (
               <li key={item} className="relative group">
-                <button
+                <a
+                href={`#${item}`}
                   onClick={() => setActive(item)}
                   className={`relative px-3 py-1 transition-all ${
                     active === item ? "text-white" : "text-gray-300"
@@ -28,7 +29,7 @@ const Navbar = () => {
                       active === item ? "scale-x-100" : ""
                     }`}
                   ></span>
-                </button>
+                </a>
               </li>
             ))}
           </ul>
@@ -60,7 +61,8 @@ const Navbar = () => {
             <ul className="space-y-4 backdrop-blur-sm bg-black/20 p-5  w-full h-full  ">
               {navItems.map((item) => (
                 <li key={item}>
-                  <button
+                  <a
+                  href={`#${item}`}
                     onClick={() => {
                       setActive(item);
                       setIsOpen(false);
@@ -70,7 +72,7 @@ const Navbar = () => {
                     }`}
                   >
                     {item}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>

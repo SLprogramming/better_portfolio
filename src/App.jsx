@@ -7,6 +7,7 @@ import {
 import HomeScreen from "./pages/HomeScreen";
 import Project from "./pages/Project";
 import Navbar from "./components/Navbar";
+import "animate.css/animate.compat.css"
 
 const router = createBrowserRouter([
   { path: "/", element: <HomeScreen /> },
