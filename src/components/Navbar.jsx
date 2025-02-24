@@ -30,7 +30,7 @@ const Navbar = () => {
         </ul>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex flex-col space-y-1 z-30"
+          className=" flex flex-col space-y-1 z-30 md:hidden"
         >
           <span className={`block w-6 h-1 bg-white rounded-full transition-transform ${isOpen ? "rotate-45 translate-y-2" : ""}`}></span>
           <span className={`block w-6 h-1 bg-white rounded-full transition-opacity ${isOpen ? "opacity-0" : ""}`}></span>
