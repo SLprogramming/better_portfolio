@@ -3,3 +3,18 @@
 *{
   font-family: 'Poppins', sans-serif;
 }
+.custom-ul{
+ display: none;
+}
+.humburger-menu{
+  display: flex;
+}
+
+@media screen and (min-width: 960px){
+  .custom-ul{
+    display: flex;
+   }
+   .humburger-menu{
+    display: none;
+  }
+}
