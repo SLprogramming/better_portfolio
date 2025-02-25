@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import computer from "../assets/img/computer.jpg";
+
 import Profile from "../components/Profile";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Resume from "../components/Resume";
+import Portfolio from "../components/Portfolio";
 
 const HomeScreen = () => {
   // Typing Animation Texts
@@ -43,7 +44,7 @@ const HomeScreen = () => {
       id="Home"
       className="bg-cyan-400  absolute w-full h-full "
       style={{
-        backgroundImage: `url(${computer})`,
+        backgroundImage: `url(${"/assets/img/computer.jpg"})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -84,6 +85,8 @@ const HomeScreen = () => {
       >
         <Resume />
       </motion.div>
+      <Portfolio/>
+      
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import SuPyae from "../assets/img/supyae_1.jpg";
+
 
 const Profile = () => {
   return (
@@ -9,7 +9,7 @@ const Profile = () => {
       <div className="w-full flex flex-col lg:flex-row gap-4">
 
         <img
-          src={SuPyae} // Replace with actual image URL
+          src="/assets/img/supyae_1.jpg" // Replace with actual image URL
           alt="Profile"
           className="w-full md:w-2/3 lg:w-1/2 rounded-md shadow-md"
         />

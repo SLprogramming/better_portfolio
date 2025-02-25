@@ -9,7 +9,7 @@ const Resume = () => {
     <div className="max-w-5xl mx-auto py-12 px-6">
       {/* Header */}
       <motion.h1 
-        className="text-4xl font-bold text-center mb-8 underline"
+        className="text-4xl font-bold text-center mb-8"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
