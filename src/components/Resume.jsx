@@ -6,16 +6,17 @@ import { motion } from "framer-motion";
 
 const Resume = () => {
   return (
-    <div className="max-w-5xl mx-auto py-12 px-6">
+    <div id="Resume" className="max-w-5xl mx-auto py-12 px-6">
       {/* Header */}
       <motion.h1 
-        className="text-4xl font-bold text-center mb-8"
+        className="text-4xl font-bold text-center "
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         Resume
       </motion.h1>
+      <div className="w-16 h-1 bg-yellow-500 mx-auto mb-8"></div>
 
       <div className="grid md:grid-cols-2 gap-8">
         {/* Left Section - Summary & Education */}

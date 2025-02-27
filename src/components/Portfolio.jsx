@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search } from "lucide-react";
+import { Search ,Link } from "lucide-react";
 import {portfolioData} from "../helper/portfolios";
 
 const Portfolio = () => {
@@ -13,8 +13,9 @@ const Portfolio = () => {
   
 
   return (
-    <div className="portfolio w-3/4 mx-auto py-12">
+    <div id="Portfolio" className="portfolio w-3/4 mx-auto py-12">
       <h2 className="text-center text-2xl font-bold">Portfolio</h2>
+      <div className="w-16 h-1 bg-yellow-500 mx-auto mb-6"></div>
       <p className="text-center text-gray-500 mb-4">Check out my latest work</p>
 
       {/* Category Filter Buttons */}
@@ -57,15 +58,17 @@ const Portfolio = () => {
 
               <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
               <div className="absolute bottom-4 left-0 w-full  ">
-                <div className={`w-[80%] mx-auto p-3 flex items-center backdrop-blur-sm bg-white/50 transition-all duration-200 ${hoverId === item.id ? "opacity-100 -translate-y-2" : "opacity-0"}`}>
+                <div className={`w-[80%] mx-auto p-3 rounded-md flex items-center justify-between backdrop-blur-sm bg-white/50 transition-all duration-200 ${hoverId === item.id ? "opacity-100 -translate-y-2" : "opacity-0"}`}>
                   <div className=" ">
 
                   <h4 className="text-slat-300">{item.category}</h4>
-                  <p className="text-sm text-gray-700">{item.description}</p>
+                  <p className="text-sm text-gray-700">{item.description.length > 30 ? item.description.slice(0,30) + '...':item.description}</p>
                   </div>
-                  <div>
-                    icon
-                    <Search />
+                  <div  className="flex gap-1 text-1xl">
+                    
+                    <Search size={20} strokeWidth={1.75} />
+              
+                    <Link size={20} strokeWidth={1.75} />
                   </div>
                 </div>
               </div>

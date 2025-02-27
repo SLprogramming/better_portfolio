@@ -4,7 +4,7 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = ["Home", "About", "Features", "Portfolio", "Contact"];
+  const navItems = ["Home", "About", "Resume", "Portfolio", "Contact"];
   return (
     <>
       <nav className="bg-black text-white px-8 py-7 shadow-md fixed top-0 w-full z-10">

@@ -5,6 +5,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Resume from "../components/Resume";
 import Portfolio from "../components/Portfolio";
+import ContactForm from "../components/ContactForm";
+import Footer from "../components/Footer";
 
 const HomeScreen = () => {
   // Typing Animation Texts
@@ -86,7 +88,8 @@ const HomeScreen = () => {
         <Resume />
       </motion.div>
       <Portfolio/>
-      
+      <ContactForm/>
+      <Footer/>
     </div>
   );
 };
