@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState ,useRef} from "react";
+import { motion, AnimatePresence,useInView } from "framer-motion";
 import { Search ,Link } from "lucide-react";
 import {portfolioData} from "../helper/portfolios";
 
@@ -10,9 +10,16 @@ const Portfolio = () => {
 
   const filteredData = filter === "All" ? portfolioData : portfolioData.filter((item) => item.category === filter);
   const [hoverId, setHoverId] = useState(null);
-  
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
+      <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
     <div id="Portfolio" className="portfolio w-3/4 mx-auto py-12">
       <h2 className="text-center text-2xl font-bold">Portfolio</h2>
       <div className="w-16 h-1 bg-yellow-500 mx-auto mb-6"></div>
@@ -79,6 +86,7 @@ const Portfolio = () => {
         </AnimatePresence>
       </motion.div>
     </div>
+    </motion.div>
   );
 };
 
