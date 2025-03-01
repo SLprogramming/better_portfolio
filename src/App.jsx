@@ -7,6 +7,7 @@ import {
 import HomeScreen from "./pages/HomeScreen";
 import Project from "./pages/Project";
 import Navbar from "./components/Navbar";
+import  { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   { path: "/", element: <HomeScreen /> },
@@ -23,7 +24,7 @@ function App() {
 
     <Navbar/>
           <RouterProvider router={router} />
-      
+      <Toaster/>
   
     </>
   )
