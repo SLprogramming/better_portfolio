@@ -7,8 +7,23 @@ import Resume from "../components/Resume";
 import Portfolio from "../components/Portfolio";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
+import AddPortfolio from "../components/AddPortfolio";
+import Navbar from "../components/Navbar";
+import usePortfolioStore from "../store/portfolio";
 
 const HomeScreen = () => {
+  const { getPortfolio ,userId,setPortfolio} = usePortfolioStore();
+  useEffect(() => {
+    (async () => {
+      if(userId){
+
+        let res =await getPortfolio({userId})
+        console.log(res.portfolio)
+        setPortfolio(res.portfolio)
+      }
+    })()
+  
+  }, [userId])
   // Typing Animation Texts
   const roles = ["Web Designer", "Frontend Developer"];
   const [text, setText] = useState("");
@@ -42,6 +57,8 @@ const HomeScreen = () => {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, index, roles]);
   return (
+    <>
+    <Navbar/>
     <div
       id="Home"
       className="bg-cyan-400  absolute w-full h-full "
@@ -87,10 +104,13 @@ const HomeScreen = () => {
       >
         <Resume />
       </motion.div>
-      <Portfolio/>
+      <Portfolio />
       <ContactForm/>
       <Footer/>
+
     </div>
+    </>
+    
   );
 };
 

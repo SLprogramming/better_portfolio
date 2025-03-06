@@ -1,17 +1,31 @@
-import React, { useState ,useRef} from "react";
+import React, { useState ,useRef, useEffect} from "react";
 import { motion, AnimatePresence,useInView } from "framer-motion";
 import { Search ,Link } from "lucide-react";
-import {portfolioData} from "../helper/portfolios";
 
+import usePortfolioStore from "../store/portfolio.js"
 const Portfolio = () => {
+  const {getUserId,portfolio} = usePortfolioStore()
   const [filter, setFilter] = useState("All");
 
-  const categories = ["All", ...new Set(portfolioData.map((item) => item.category))];
+  const categories = ["All", ...new Set(portfolio.map((item) => item.category))];
 
-  const filteredData = filter === "All" ? portfolioData : portfolioData.filter((item) => item.category === filter);
+  const filteredData = filter === "All" ? portfolio : portfolio.filter((item) => item.category === filter);
   const [hoverId, setHoverId] = useState(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const fetchData = async () => {
+    let res =await getUserId()
+  
+    console.log(res,'getPortfolio')
+  };
+useEffect( () => {
+  
+    fetchData()
+  
+
+}
+,[])
 
   return (
       <motion.div
@@ -47,7 +61,7 @@ const Portfolio = () => {
         <AnimatePresence>
           {filteredData.map((item) => (
             <motion.div
-              key={item.id}
+              key={item._id}
               layout
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -55,7 +69,7 @@ const Portfolio = () => {
               transition={{ duration: 0.2 }}
               className="shadow-lg rounded-lg overflow-hidden"
               onMouseEnter={() => {
-               setHoverId(item.id);
+               setHoverId(item._id);
               }}
               onMouseLeave={() => {
                 setHoverId(null)
@@ -63,9 +77,9 @@ const Portfolio = () => {
             >
               <div className="relative">
 
-              <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
+              <img src={item.image.url} alt={item.title} className="w-full h-48 object-cover" />
               <div className="absolute bottom-4 left-0 w-full  ">
-                <div className={`w-[80%] mx-auto p-3 rounded-md flex items-center justify-between backdrop-blur-sm bg-white/50 transition-all duration-200 ${hoverId === item.id ? "opacity-100 -translate-y-2" : "opacity-0"}`}>
+                <div className={`w-[80%] mx-auto p-3 rounded-md flex items-center justify-between backdrop-blur-sm bg-white/50 transition-all duration-200 ${hoverId === item._id ? "opacity-100 -translate-y-2" : "opacity-0"}`}>
                   <div className=" ">
 
                   <h4 className="text-slat-300">{item.category}</h4>

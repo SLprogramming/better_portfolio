@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 
 const Resume = () => {
+ 
   return (
     <div id="Resume" className="max-w-5xl mx-auto py-12 px-6">
       {/* Header */}

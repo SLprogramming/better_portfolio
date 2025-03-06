@@ -7,7 +7,7 @@ const Navbar = () => {
   const navItems = ["Home", "About", "Resume", "Portfolio", "Contact"];
   return (
     <>
-      <nav className="bg-black text-white px-8 py-7 shadow-md fixed top-0 w-full z-10">
+      <nav className="bg-black text-white px-8 py-7 shadow-md fixed top-0 w-full z-10 ">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
           <h1 className="text-3xl font-bold">Su Pyae</h1>

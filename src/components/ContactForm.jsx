@@ -29,7 +29,7 @@ const ContactForm = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
- 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
