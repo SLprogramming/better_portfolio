@@ -93,21 +93,15 @@ const Resume = () => {
                 Web Designer <br/>
                 Feb 2016 – Jan 2019 <br/>
                  Yangon, Myanmar
-              </p>
-            </div>
-            <div className="mb-6">
-              <h3 className="font-bold relative">
-                {" "}
-                <div className="p-[7px] bg-yellow-500 inline-block absolute left-[-18px] border-2 border-yellow-500 rounded-full -translate-x-2"></div>
-                Frontend Developer
-
-
-              </h3>
+              </p> <br/>
               <p className="text-sm text-gray-600 font-semibold">
+                Frontend Developer <br/>
               Feb 2019 – Jan 2023 <br/>
               Yangon, Myanmar
               </p>
             </div>
+           
+
             <div className="mb-6">
               <h3 className="font-bold relative">
                 {" "}
