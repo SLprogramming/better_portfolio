@@ -43,7 +43,7 @@ const Portfolio = () => {
       </div>
 
       {/* Portfolio Grid with Animation */}
-      <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         <AnimatePresence>
           {filteredData.map((item) => (
             <motion.div
@@ -63,7 +63,7 @@ const Portfolio = () => {
             >
               <div className="relative">
 
-              <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
+              <img src={item.image} alt={item.title} className="w-full h-[300px] object-cover" />
               <div className="absolute bottom-4 left-0 w-full  ">
                 <div className={`w-[80%] mx-auto p-3 rounded-md flex items-center justify-between backdrop-blur-sm bg-white/50 transition-all duration-200 ${hoverId === item.id ? "opacity-100 -translate-y-2" : "opacity-0"}`}>
                   <div className=" ">
