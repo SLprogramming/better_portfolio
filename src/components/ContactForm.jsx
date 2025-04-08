@@ -73,7 +73,7 @@ const ContactForm = () => {
           <span className="text-yellow-500 text-2xl  border-1 p-2 rounded-full "> <MapPin size={20}/></span>
           <div>
             <h3 className="font-semibold">Address</h3>
-            <p className="text-gray-600">No.10B, Thukha Street, Hlaing Township, Yangon.</p>
+            <p className="text-gray-600">No.9B, Thukha Street, Hlaing Township, Yangon.</p>
           </div>
         </div>
 
