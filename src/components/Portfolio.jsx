@@ -2,17 +2,21 @@ import React, { useState ,useRef} from "react";
 import { motion, AnimatePresence,useInView } from "framer-motion";
 import { Search ,Link } from "lucide-react";
 import {portfolioData} from "../helper/portfolios";
+import { select } from "framer-motion/m";
 
 const Portfolio = () => {
   const [filter, setFilter] = useState("All");
 
   const categories = ["All", ...new Set(portfolioData.map((item) => item.category))];
-
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
   const filteredData = filter === "All" ? portfolioData : portfolioData.filter((item) => item.category === filter);
   const [hoverId, setHoverId] = useState(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
+  const closeImg = (flag) => {
+    setIsPopupOpen(flag)
+  }
   return (
       <motion.div
             ref={ref}
@@ -61,7 +65,10 @@ const Portfolio = () => {
                 setHoverId(null)
               }}
             >
-              <div className="relative">
+              <div className="relative" onClick={() => {
+                setIsPopupOpen(true)
+                setSelectedImage(item.image)
+              }}>
 
               <img src={item.image} alt={item.title} className="w-full h-[300px] object-cover" />
               <div className="absolute bottom-4 left-0 w-full  ">
@@ -73,9 +80,15 @@ const Portfolio = () => {
                   </div>
                   <div  className="flex gap-1 text-1xl">
                     
-                    <Search size={20} strokeWidth={1.75} />
+                   
               
-                    <Link size={20} strokeWidth={1.75} />
+                    <Link size={20} strokeWidth={1.75} onClick={(e) => {
+                      e.stopPropagation()
+                      if(item?.link){
+
+                        window.location.href = item.link
+                      }
+                    }} />
                   </div>
                 </div>
               </div>
@@ -83,6 +96,16 @@ const Portfolio = () => {
               
             </motion.div>
           ))}
+
+      <div className={`text-white fixed w-full transition-all h-full duration-300 top-0 left-0 bg-black/80 rounded-lg  flex items-center justify-center ${isPopupOpen ? 'z-[999999] translate-y-0 opacity-100':'opacity-0 z-[-99999] translate-y-[50px]'}`} onClick={() => {
+            console.log('clicked')
+            closeImg(false)
+          }} >
+            <img onClick={(e) => {
+              e.stopPropagation()
+               closeImg(true)
+            }} src={selectedImage} className="w-[800px] " alt="" srcset="" />
+          </div>
         </AnimatePresence>
       </motion.div>
     </div>
