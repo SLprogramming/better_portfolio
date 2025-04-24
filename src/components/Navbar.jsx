@@ -11,6 +11,11 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
           <h1 className="text-3xl font-bold">Su Pyae</h1>
+          {/* <img
+          src="/assets/img/supyae_logo.jpg" // Replace with actual image URL
+          alt="Profile"
+          className="w-full md:w-2/3 lg:w-1/2 rounded-md shadow-md"
+        /> */}
 
           {/* Navigation Links */}
           <ul className=" space-x-2 text-md custom-ul">

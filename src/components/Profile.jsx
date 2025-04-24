@@ -16,7 +16,7 @@ const Profile = () => {
         
         <div className="mt-4 ms-4 w-full md:w-full lg:w-1/2">
           <h2 className="text-lg font-semibold">Name: <span className="font-normal">Thae Oo Su Pyae Sone</span></h2>
-          <h2 className="text-lg font-semibold">Profile: <span className="font-normal">Web Designer / Frontend Developer</span></h2>
+          <h2 className="text-lg font-semibold">Profile: <span className="font-normal">Web Designer / Graphic Designer</span></h2>
           <h2 className="text-lg font-semibold">Email: <span className="font-normal">thaeoosupyae@gmail.com</span></h2>
           <h2 className="text-lg font-semibold">Phone: <span className="font-normal">+959 421019280</span></h2>
         </div>

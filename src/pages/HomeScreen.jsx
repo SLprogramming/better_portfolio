@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 
 const HomeScreen = () => {
   // Typing Animation Texts
-  const roles = ["Web Designer", "Frontend Developer"];
+  const roles = ["Web Designer", " Graphic Designer"];
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
