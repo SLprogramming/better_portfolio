@@ -7,22 +7,40 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Social Icons */}
         <div className="flex space-x-6 mb-4">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Facebook className="w-6 h-6 hover:text-yellow-500 transition" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Twitter className="w-6 h-6 hover:text-yellow-500 transition" />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Instagram className="w-6 h-6 hover:text-yellow-500 transition" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Linkedin className="w-6 h-6 hover:text-yellow-500 transition" />
           </a>
         </div>
 
         {/* Copyright Text */}
-        <p className="text-gray-400 text-sm">© {new Date().getFullYear()} SLProgramming. All rights reserved.</p>
+        <p className="text-gray-400 text-sm">
+          © {new Date().getFullYear()} Su Pyae. All rights reserved.
+        </p>
       </div>
     </footer>
   );

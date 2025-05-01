@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 
 const HomeScreen = () => {
   // Typing Animation Texts
-  const roles = ["Web Designer", " Graphic Designer"];
+  const roles = ["Web Designer", " Graphic Designer", "UI/UX Designer"];
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -54,9 +54,8 @@ const HomeScreen = () => {
       <div className="bg-black  opacity-70 w-full h-full flex justify-center items-center">
         <div className="opacity-100 text-white">
           <motion.div
-       
             initial={{ opacity: 0, y: 50 }}
-            animate={ { opacity: 1, y: 0 } }
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Typing Animation */}
@@ -87,9 +86,9 @@ const HomeScreen = () => {
       >
         <Resume />
       </motion.div>
-      <Portfolio/>
-      <ContactForm/>
-      <Footer/>
+      <Portfolio />
+      <ContactForm />
+      <Footer />
     </div>
   );
 };
