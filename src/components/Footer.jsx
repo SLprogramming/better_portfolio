@@ -29,7 +29,7 @@ const Footer = () => {
             <Instagram className="w-6 h-6 hover:text-yellow-500 transition" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/thaeoo-supyaesone-75185a93?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             target="_blank"
             rel="noopener noreferrer"
           >
